@@ -1,0 +1,8 @@
+FROM python:3.10-slim
+
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY glossary/ /app/glossary/
+RUN python -m grpc_tools.protoc -I /app/glossary --python_out=/app/glossary --grpc_python_out=/app/glossary /app/glossary/glossary.proto
+CMD ["python", "glossary/server.py"]
