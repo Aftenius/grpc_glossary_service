@@ -3,7 +3,8 @@
    ```cd grpc_glossary_service```
 
 ## Запуск контейнера
-```docker-compose up --build
+```
+docker-compose up --build
 ```
 
 ## Результаты работы клиента: После запуска клиент выполняет запросы:
